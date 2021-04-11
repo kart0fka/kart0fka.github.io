@@ -1,0 +1,281 @@
+﻿@font-face{
+    font-family: NotoSans;
+    src: url(fonts/NotoSans-Regular.ttf); 
+    font-style: normal;
+    font-weight: normal;
+
+}
+
+@font-face{
+    font-family: NotoSans;
+    src: url(fonts/NotoSans-Italic.ttf); 
+    font-style: italic;
+    font-weight: normal;
+
+}
+
+@font-face{
+    font-family: NotoSans;
+    src: url(fonts/NotoSans-Bold.ttf); 
+    font-style: normal;
+    font-weight: bold;
+
+}
+
+@font-face{
+    font-family: NotoSans;
+    src: url(fonts/NotoSans-BoldItalic.ttf); 
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: NotoSans;
+}
+
+li{
+    list-style: none;
+}
+
+.wrapper{
+    max-width: 1080px;
+    margin: 0 auto 20px;
+}
+
+header{
+    background-color: white;
+    position: fixed;
+    left: calc((100% - 1080px)/2);
+    width: 1080px;
+}
+
+#loading {
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+}
+
+#loading span{
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    transition: all .5s ease;
+}
+
+#loading #l1{
+    border-left: solid 5px black;
+    border-bottom: solid 5px black;
+    width: 100px;
+    height: 100px;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    animation: rotate .8s linear infinite;
+}
+#loading #l2{
+    border-right: solid 5px black;
+    border-bottom: solid 5px black;
+    width: 70px;
+    height: 70px;
+    left: calc(50% - 35px);
+    top: calc(50% - 35px);
+    animation: rotate 1s linear infinite;
+}
+#loading #l3{
+    border-right: solid 5px black;
+    border-top: solid 5px black;
+    width: 50px;
+    height: 50px;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+    animation: rotate 1.2s linear infinite;
+}
+#loading #l4{
+    border-left: solid 5px black;
+    border-top: solid 5px black;
+    width: 30px;
+    height: 30px;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+    animation: rotate 1.4s linear infinite;
+}
+
+#header-nav{
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 20px;
+}
+
+#header-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu h1{
+    display: none;
+}   
+
+#menu ul{
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#menu a{
+    color: black;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    border-bottom: solid 1px grey;
+    padding: 10px;
+}
+
+#menu ul li a:hover, #menu ul li a:focus{
+    border-bottom-color: black;
+    color: black;
+}
+
+#content{
+    padding-top: 70px;
+}
+
+.title{
+    padding-bottom: 5px;
+    border-bottom: solid 5px #2558d9;
+    margin-bottom: 20px;
+    width: max-content;
+    transition: .3s;
+}
+
+.title:hover{
+    border-color: #1d48b5;
+    transition: .3s;
+}
+
+
+
+@media( max-width: 1080px ){
+    header{
+        position: inherit;
+    }
+
+    #menu-burger{
+        background-color: white;
+        padding: 10px;
+        position: fixed;
+        display: inline-block;
+        cursor: pointer;
+        width: 100%;
+        z-index: 10;
+
+    }
+
+    #bar1, #bar2, #bar3{
+        display: block;
+        width: 40px;
+        height: 4px;
+        margin-top: 6px;
+        border-radius: 40px;
+        background-color: black;
+        transition: .3s;
+    }
+
+    .toggled{
+        margin-top: 20px;
+    }
+
+    .toggled  #bar1{
+        -ms-transform: rotate(-45deg) translate(0, 50%);
+        -moz-transform: rotate(-45deg) translate(0, 50%);
+        -webkit-transform: rotate(-45deg) translate(0, 50%);
+        -o-transform: rotate(-45deg) translate(0, 50%);
+        transform: rotate(-45deg) translate(0, 50%);
+        margin: 0;
+    }
+
+    .toggled  #bar2{
+        -ms-transform: rotate(45deg) translate(0, -50%);
+        -moz-transform: rotate(45deg) translate(0, -50%);
+        -webkit-transform: rotate(45deg) translate(0, -50%);
+        -o-transform: rotate(45deg) translate(0, -50%);
+        transform: rotate(45deg) translate(0, -50%);
+        margin: 0;
+    }
+
+    .toggled  #bar3{
+        opacity: 0;
+    }
+
+    #menu{
+        position: fixed;
+        display: block;
+        height: 100%;
+        left: -100%;
+        transition: .3s;
+    }
+
+    #menu h1{
+        margin-top: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    #menu.opened{
+        background-color: white;
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        transition: .3s;
+    }
+
+    #menu ul{
+        display: block;
+    }
+
+    #menu ul li{
+        border-bottom: solid .5px grey;
+        font-size: 18px;
+        display: table;
+        margin: 0 auto;
+        padding: 20px 0 20px 0;
+        width: inherit;
+        text-align: center;
+    }
+
+    #menu ul li a{
+        color: grey;
+        border: none;
+    }
+
+    #content{
+        padding-top: 50px;
+    }
+
+    .title{
+        width: inherit;
+    }
+
+    header .wrapper{
+        margin: 0;
+    }
+
+    .wrapper{
+        margin: 10px 0;
+    }
+
+
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(360deg);
+    }
+}
+
