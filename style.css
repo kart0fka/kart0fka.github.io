@@ -252,6 +252,7 @@ header{
         height: 100%;
         left: -100%;
         transition: .3s;
+        overflow-y: auto;
     }
 
     #menu h1{
