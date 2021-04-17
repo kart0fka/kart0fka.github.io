@@ -33,10 +33,12 @@
 *{
     margin: 0;
     padding: 0;
+    color: white;
 }
 
 body{
     font-family: NotoSans;
+    background-color: #1e2021;
 }
 
 li{
@@ -49,7 +51,7 @@ li{
 }
 
 header{
-    background-color: white;
+    background-color: #171919;
     position: fixed;
     left: calc((100% - 1080px)/2);
     width: 1080px;
@@ -60,7 +62,7 @@ header{
     width: 100%;
     height: 100%;
     position: fixed;
-    background-color: white;
+    background-color: #1e2021;
 }
 
 #loading span{
@@ -68,11 +70,12 @@ header{
     display: block;
     border-radius: 100%;
     transition: all .5s ease;
+    border-color: white;
 }
 
 #loading #l1{
-    border-left: solid 5px black;
-    border-bottom: solid 5px black;
+    border-left: solid 5px;
+    border-bottom: solid 5px;
     width: 100px;
     height: 100px;
     left: calc(50% - 50px);
@@ -80,8 +83,8 @@ header{
     animation: rotate .8s linear infinite;
 }
 #loading #l2{
-    border-right: solid 5px black;
-    border-bottom: solid 5px black;
+    border-right: solid 5px;
+    border-bottom: solid 5px;
     width: 70px;
     height: 70px;
     left: calc(50% - 35px);
@@ -89,8 +92,8 @@ header{
     animation: rotate 1s linear infinite;
 }
 #loading #l3{
-    border-right: solid 5px black;
-    border-top: solid 5px black;
+    border-right: solid 5px;
+    border-top: solid 5px;
     width: 50px;
     height: 50px;
     left: calc(50% - 25px);
@@ -98,8 +101,8 @@ header{
     animation: rotate 1.2s linear infinite;
 }
 #loading #l4{
-    border-left: solid 5px black;
-    border-top: solid 5px black;
+    border-left: solid 5px;
+    border-top: solid 5px;
     width: 30px;
     height: 30px;
     left: calc(50% - 15px);
@@ -129,17 +132,17 @@ header{
     width: 100%;
 }
 #menu a{
-    color: black;
+    color: #bdbdbd;
     font-size: 16px;
     font-weight: normal;
     text-decoration: none;
-    border-bottom: solid 1px grey;
+    border-bottom: solid 1px #bdbdbd;
     padding: 10px;
 }
 
 #menu ul li a:hover, #menu ul li a:focus{
-    border-bottom-color: black;
-    color: black;
+    border-bottom-color: white;
+    color: white;
 }
 
 #content{
@@ -148,17 +151,48 @@ header{
 
 .title{
     padding-bottom: 5px;
-    border-bottom: solid 5px #2558d9;
+    border-bottom: solid 5px #6650f2;
     margin-bottom: 20px;
     width: max-content;
     transition: .3s;
+    color: #efefef;
 }
 
 .title:hover{
-    border-color: #1d48b5;
+    border-color: #7b66ff;
     transition: .3s;
 }
 
+.text{
+    padding: 3px;
+}
+
+.text ul li{
+    list-style: inside;
+    list-style-type: '⚊';
+    padding: 10px;
+}
+
+.text a{
+    text-decoration: none;
+    color: #54a4f0;
+}
+
+.imgs img{
+    margin: 10px auto;
+    max-width: 100%;
+}
+
+.imgs .img{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.imgs .img p{
+    font-size: .84em;
+    color: grey;
+    font-style: italic;
+}
 
 
 @media( max-width: 1080px ){
@@ -167,12 +201,11 @@ header{
     }
 
     #menu-burger{
-        background-color: white;
+        background-color: #171919;
         padding: 10px;
         position: fixed;
         display: inline-block;
         cursor: pointer;
-        width: 100%;
         z-index: 10;
 
     }
@@ -183,12 +216,12 @@ header{
         height: 4px;
         margin-top: 6px;
         border-radius: 40px;
-        background-color: black;
-        transition: .3s;
+        background-color: white;
+        transition: .5s;
     }
 
     .toggled{
-        margin-top: 20px;
+        margin-top: 17px;
     }
 
     .toggled  #bar1{
@@ -228,7 +261,7 @@ header{
     }
 
     #menu.opened{
-        background-color: white;
+        background-color: #171919;
         width: 100%;
         max-width: 100%;
         left: 0;
@@ -240,7 +273,7 @@ header{
     }
 
     #menu ul li{
-        border-bottom: solid .5px grey;
+        border-bottom: solid .5px #bdbdbd;
         font-size: 18px;
         display: table;
         margin: 0 auto;
@@ -250,8 +283,12 @@ header{
     }
 
     #menu ul li a{
-        color: grey;
+        color: #bdbdbd;
         border: none;
+    }
+
+    #menu ul li a:hover, #menu ul li a:focus{
+        color: white;
     }
 
     #content{
@@ -259,7 +296,7 @@ header{
     }
 
     .title{
-        width: inherit;
+        padding: 0 10px 10px 10px;
     }
 
     header .wrapper{
@@ -274,7 +311,13 @@ header{
 }
 
 @keyframes rotate{
-    from{
+    0%{
+        transform: rotate(0deg);
+    }
+    65%{
+        transform: rotate(180deg);
+    }
+    100%{
         transform: rotate(360deg);
     }
 }
