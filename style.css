@@ -179,9 +179,12 @@ header{
 }
 
 .imgs img{
+    border: none;
     margin: 10px auto;
     max-width: 100%;
+    transition: 1s;
 }
+
 
 .imgs .img{
     text-align: center;
