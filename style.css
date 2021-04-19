@@ -182,9 +182,17 @@ header{
     border: none;
     margin: 10px auto;
     max-width: 100%;
-    transition: 1s;
+    transition: .4s;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
+.imgs img:hover{
+    box-shadow: 0 0 10px rgba(255, 255, 255, .5);
+}
 
 .imgs .img{
     text-align: center;
